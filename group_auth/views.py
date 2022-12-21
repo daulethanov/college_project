@@ -4,6 +4,8 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView
+
 from .forms import *
 
 
@@ -39,3 +41,26 @@ class LoginUser(LoginView):
 def logout_user(request):
     logout(request)
     return redirect('home')
+
+
+class GroupsList(ListView):
+    model = Group
+    template_name = 'index.html'
+    context_object_name = 'groups'
+
+    def get_context_data(self, **kwargs):
+        context = super(GroupsList, self).get_context_data(**kwargs)
+        context['groups'] = Group.objects.all()
+        return context
+
+
+def view_groups(request):
+    groups = Group.objects.all()
+    users_by_group = {group: group.user_set.all() for group in groups}
+    return render(request, 'groups.html', {'groups': groups, 'users_by_group': users_by_group})
+
+
+class GroupDetail(DetailView):
+    model = Group
+    context_object_name = 'group_detail'
+    template_name = 'index.html'

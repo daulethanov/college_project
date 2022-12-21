@@ -8,13 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Home</h1>
-{{ user.groups.all.0 }}
-{{ groups.name }}
-<ul>
- {% for group in groups %}
-     <li>{{ group.name }}</li>
- {% endfor %}
-</ul>
+{% for group in groups %}
+    <h2>{{ group.name }}</h2>
+     <ul>
+        {% for user in group.user_set.all %}
+            <li>{{ user.username }}</li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+
 </body>
 </html>
