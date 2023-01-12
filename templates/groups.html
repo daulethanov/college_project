@@ -11,7 +11,7 @@
 {% for group in groups %}
     <h2>{{ group.name }}</h2>
      <ul>
-        {% for user in group.user_set.all %}
+        {% for user in group.users_set.all %}
             <li>{{ user.username }}</li>
         {% endfor %}
     </ul>

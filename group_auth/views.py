@@ -21,8 +21,8 @@ def registration_view(request):
             user = form.save()
             groups = Group.objects.all()
             group = random.choice(groups)
-            if group.user_set.count() <= 10:
-                group.user_set.add(user)
+            if group.users_set.count() <= 10:
+                group.users_set.add(user)
                 group.save()
             return redirect('login')
     else:
@@ -56,7 +56,7 @@ class GroupsList(ListView):
 
 def view_groups(request):
     groups = Group.objects.all()
-    users_by_group = {group: group.user_set.all() for group in groups}
+    users_by_group = {group: group.users_set.all() for group in groups}
     return render(request, 'groups.html', {'groups': groups, 'users_by_group': users_by_group})
 
 
