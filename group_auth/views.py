@@ -9,8 +9,8 @@ from django.views.generic import ListView, DetailView
 from .forms import *
 
 
-def home(request):
-    return render(request, 'index.html')
+# def home(request):
+#     return render(request, 'index.html')
 
 
 def registration_view(request):
@@ -24,10 +24,10 @@ def registration_view(request):
             if group.users_set.count() <= 10:
                 group.users_set.add(user)
                 group.save()
-            return redirect('login')
+            return redirect('group')
     else:
         form = RegistrationForm()
-    return render(request, 'account/register.html', {'form': form})
+    return render(request, 'index.html', {'form': form})
 
 
 class LoginUser(LoginView):

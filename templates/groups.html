@@ -1,21 +1,44 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'index.html' %}
+
+{% block bootstrap %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+ {% endblock bootstrap %}
+
+{% block a %}<li><a href="{% url 'home' %}">ОСТАВИТЬ ЗАЯВКУ</a></li> {% endblock a %}
+
+{% block content %}
+    <br><br><br><br>
+<div class="container">
+<div class="card-group">
 {% for group in groups %}
-    <h2>{{ group.name }}</h2>
-     <ul>
+
+    <div class="card">
+    <div class="card-body">
+    <h5 class="card-title">{{ group.name }}</h5>
+        <br><br><br><br><br><br><br><br>
         {% for user in group.users_set.all %}
-            <li>{{ user.username }}</li>
+
+            <li><p class="card-text">{{ user.last_name }}</p>
+            <p class="card-text">{{ user.first_name }}</p></li>
         {% endfor %}
-    </ul>
+        <br><br><br>
+    </div>
+  </div>
 {% endfor %}
 
-</body>
-</html>
+</div>
+</div>
+{% endblock %}
+
+{#{% block footer %}#}
+{#<footer class="py-3 my-4">#}
+{#    <ul class="nav justify-content-center border-bottom pb-3 mb-3">#}
+{#      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Дом</font></font></a></li>#}
+{#      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Функции</font></font></a></li>#}
+{#      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Цены</font></font></a></li>#}
+{#      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Часто задаваемые вопросы</font></font></a></li>#}
+{#      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">О</font></font></a></li>#}
+{#    </ul>#}
+{#    <p class="text-center text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">© 2022 Компания, ООО</font></font></p>#}
+{#  </footer>#}
+{#{% endblock footer %}#}

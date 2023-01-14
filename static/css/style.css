@@ -1,0 +1,451 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	height: 76px;
+	width: 100%;
+	position: fixed;
+	z-index: 100;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.widtch {
+	width: 1494px;
+	margin: 0 auto;
+}
+
+.header__content {
+	height: 100%;
+	width: 1494px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav__item li {
+	margin-right: 26px;
+}
+
+.nav__item li:last-child {
+	margin-right: 0;
+}
+
+.nav__item {
+	display: flex;
+	align-items: center;
+}
+
+.nav__item a {
+	color: white;
+	font-weight: 400;
+	font-size: 15px;
+}
+
+
+.nav__item a:hover {
+	border-bottom: solid 2px white;
+}
+
+
+.nav__sety__item {
+	display: flex;
+	align-items: center;
+}
+
+.nav__sety__item li {
+	margin-right: 10px;
+}
+
+.nav__sety__item li:last-child {
+	margin-right: 0;
+}
+
+
+.nav__sety__item img:hover {
+	width: 40px;
+	height: 40px;
+}
+
+.top {
+	background: url(../../static/img/header/headerfon.jpg), rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 800px;
+	background-size: cover;
+	background-blend-mode: color;
+	display: flex;
+	align-items: center;
+
+}
+
+.top__content {
+	width: 765px;
+	height: 300px;
+}
+
+.top__content ul {
+	display: flex;
+	align-items: center;
+}
+
+.top__content a {
+	color: white;
+	font-weight: 400;
+	font-size: 16px;
+
+}
+
+.top__content a:hover {
+	border-bottom: solid 2px white;
+}
+
+
+.top__content li {
+	margin-right: 28px;
+	margin-bottom: 18px;
+}
+
+.top__content li:last-child {
+	margin-right: 0;
+}
+
+.top__content__border {
+	width: 100%;
+	height: 2px;
+	background-color: white;
+	margin-bottom: 25px;
+}
+
+.top__content h1 {
+	text-transform: uppercase;
+	color: white;
+	font-weight: 400;
+	font-size: 59px;
+}
+
+.info {
+	margin-top: 68px;
+	margin-bottom: 163px;
+}
+
+.participation {
+	display: flex;
+	width: 100%;
+	height: 578px;
+}
+
+.participation__img {
+	width: 50%;
+	height: 100%;
+	position: relative;
+}
+
+.participation__img img {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.participation__info {
+	width: 50%;
+	height: 100%;
+	background-color: #F1F1F1;
+	padding-left: 150px;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.participation__info__padding {
+	width: 538px;
+	height: 269px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.participation__info__padding h2 {
+	font-weight: 400;
+	font-size: 29px;
+	margin-bottom: 31px;
+
+}
+
+.participation__info__padding h3 {
+
+	font-weight: 400;
+	font-size: 22px;
+	margin-bottom: 16px;
+
+}
+
+.participation__info__padding p {
+	font-weight: 400;
+	font-size: 16px;
+	margin-bottom: 22px;
+}
+
+.participation__info__padding p:last-child {
+	margin-bottom: 0;
+}
+
+.question {
+	text-align: center;
+	margin-top: 133px;
+	margin-bottom: 137px;
+}
+
+.question h2 {
+	font-weight: 400;
+	font-size: 38px;
+	margin-bottom: 52px;
+}
+
+.question__item {
+	width: 800px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.question__item-svg {
+	width: 180px;
+}
+
+.question__item-svg img {
+	margin-bottom: 26px;
+}
+
+.question__item-svg p {
+	font-weight: 400;
+	font-size: 20px;
+}
+
+.info__button__item {
+	width: 520px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.info__button__item button {
+	width: 244px;
+	height: 56px;
+	font-weight: 400;
+	font-size: 16px;
+	color: white;
+	border: none;
+	border-radius: 18px;
+	cursor: pointer;
+}
+
+.info__button__zapis {
+	background-color: #3FA38D;
+}
+
+.info__button__zapis:hover {
+	background-color: #327e6d;
+}
+
+.info__button__zapis:active {
+	background-color: #3FA38D;
+}
+
+
+.info__button__question {
+	background-color: black;
+}
+
+.info__button__question:hover {
+	background-color: rgb(41, 41, 41);
+}
+
+.info__button__question:active {
+	background-color: rgb(0, 0, 0);
+}
+
+/* форма */
+
+.form {
+	width: 620px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.form h2 {
+	font-weight: 400;
+	font-size: 38px;
+	margin-bottom: 32px;
+}
+
+.form__item {
+	text-align: left;
+	margin-bottom: 25px;
+}
+
+.form__item p {
+	font-weight: 400;
+	font-size: 18px;
+}
+
+#mini__font {
+	font-weight: 400;
+	font-size: 10px;
+	margin-top: 3px;
+	margin-bottom: 10px;
+}
+
+.form__item input {
+	width: 100%;
+	height: 60px;
+	border-radius: 18px;
+	border: solid 1px black;
+	outline: none;
+	font-weight: 400;
+	font-size: 20px;
+	padding-left: 15px;
+	box-sizing: border-box;
+}
+
+.form__item input:last-child {
+	margin-bottom: 0;
+}
+
+#telefon {
+	position: relative;
+}
+
+#telefon input {
+	padding-left: 63px;
+}
+
+#telefon__img {
+	position: absolute;
+	width: 18px;
+	height: 13px;
+	left: 20px;
+	top: 24px;
+}
+
+.button__form {
+	width: 228px;
+	height: 60px;
+	border-radius: 18px;
+	border: none;
+	cursor: pointer;
+	background-color: #3FA38D;
+	color: white;
+	width: 228px;
+	height: 60px;
+	margin-top: 41px;
+}
+
+.button__form:hover {
+	background-color: #327e6d;
+}
+
+.button__form:active {
+	background-color: #3FA38D;
+}
+
+.button p {
+	font-weight: 400;
+	font-size: 16px;
+	margin-top: 27px;
+}
+
+.button p:last-child {
+	margin-top: 0;
+}
+
+/* подвал */
+
+.footer {
+	flex: 0 0 auto;
+	width: 100%;
+	height: 280px;
+	background-color: black;
+	margin-top: 41px;
+	text-align: center;
+	padding-top: 34px;
+}
+
+footer h2 {
+	font-weight: 400;
+	font-size: 25px;
+	color: white;
+	margin-bottom: 18px;
+
+}
+
+footer p {
+	font-weight: 400;
+	font-size: 16px;
+	color: white;
+}
+
+.footer__img {
+	margin-top: 50px;
+
+}
+
+footer a {
+	margin-right: 28px;
+}
+
+
+footer a:last-child {
+	margin-right: 0;
+}
+
+@media only screen and (max-width : 1550px) {
+	.header__content {
+		width: 1080px;
+	}
+
+	.widtch {
+		width: 1080px;
+	}
+
+	.top {
+		width: 100%;
+		background-size: cover;
+	}
+
+	.participation__info__padding {
+		width: 338px;
+	}
+
+	.participation__img img {
+		width: 543px;
+	}
+}
+
+@media only screen and (max-width : 1080px) {
+	.header__content {
+		width: 800px;
+	}
+
+	.widtch {
+		width: 800px;
+	}
+
+	.participation__info {
+		padding-left: 50px;
+	}
+
+	.participation__img img {
+		width: 400px;
+	}
+}

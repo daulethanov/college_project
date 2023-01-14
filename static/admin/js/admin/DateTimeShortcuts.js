@@ -197,7 +197,7 @@
                 clock_box.style.left = findPosX(clock_link) + 17 + 'px';
             }
             else {
-                // since style's width is in em, it'd be tough to calculate
+                // since css's width is in em, it'd be tough to calculate
                 // px value of it. let's use an estimated px for now
                 clock_box.style.left = findPosX(clock_link) - 110 + 'px';
             }
@@ -368,7 +368,7 @@
                 cal_box.style.left = findPosX(cal_link) + 17 + 'px';
             }
             else {
-                // since style's width is in em, it'd be tough to calculate
+                // since css's width is in em, it'd be tough to calculate
                 // px value of it. let's use an estimated px for now
                 cal_box.style.left = findPosX(cal_link) - 180 + 'px';
             }

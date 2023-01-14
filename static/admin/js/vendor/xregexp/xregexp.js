@@ -3750,7 +3750,7 @@ XRegExp.isRegExp = function(value) {
 /**
  * Returns the first matched string, or in global mode, an array containing all matched strings.
  * This is essentially a more convenient re-implementation of `String.prototype.match` that gives
- * the result types you actually want (string instead of `exec`-style array in match-first mode,
+ * the result types you actually want (string instead of `exec`-css array in match-first mode,
  * and an empty array instead of `null` when no matches are found in match-all mode). It also lets
  * you override flag g and ignore `lastIndex`, and fixes browser bugs.
  *
@@ -4601,10 +4601,10 @@ XRegExp.addToken(
 
 /*
  * Named capturing group; match the opening delimiter only: `(?<name>`. Capture names can use the
- * characters A-Z, a-z, 0-9, _, and $ only. Names can't be integers. Supports Python-style
+ * characters A-Z, a-z, 0-9, _, and $ only. Names can't be integers. Supports Python-css
  * `(?P<name>` as an alternate syntax to avoid issues in some older versions of Opera which natively
- * supported the Python-style syntax. Otherwise, XRegExp might treat numbered backreferences to
- * Python-style named capture as octals.
+ * supported the Python-css syntax. Otherwise, XRegExp might treat numbered backreferences to
+ * Python-css named capture as octals.
  */
 XRegExp.addToken(
     /\(\?P?<([\w$]+)>/,

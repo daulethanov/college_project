@@ -1,20 +1,146 @@
-<!doctype html>
+<!DOCTYPE html>
+{% load static %}
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+		rel="stylesheet">
+    {% block bootstrap %} {% endblock bootstrap %}
 </head>
+
 <body>
-<h1>Home</h1>
-{{ user.groups.all.0 }}
-{{ groups.name }}
-<ul>
- {% for group in groups %}
-     <li>{{ group.name }}</li>
- {% endfor %}
-</ul>
+	<header >
+		<div class="header__content">
+			<div class="nav">
+				<ul class="nav__item" id="header">
+					<li>
+                        <img src="{% static 'img/header/logo.png' %}" alt="logo">
+					</li>
+					<li><a href="{% url 'home' %}">ДОМАШНЯЯ СТРАНИЦА</a></li>
+					<li><a href="{% url 'group' %}">УЧАСТНИКИ МЕРОПРИЯТИЯ</a></li>
+					{% block a %}<li> <a href="#regist">ОСТАВИТЬ ЗАЯВКУ</a></li>{% endblock a %}
+				</ul>
+			</div>
+			<div class="nav__sety">
+				<ul class="nav__sety__item">
+					<li><a href="#">
+							<img src="{% static 'img/header/insta.png' %}" alt="insta">
+						</a></li>
+					<li><a href="#">
+							<img src="{% static 'img/header/facebook.png' %}" alt="facebook">
+						</a></li>
+					<li><a href="#">
+							<img src="{% static 'img/header/telegramm.png' %}" alt="telegramm">
+						</a></li>
+					<li><a href="#"><img src="{% static 'img/header/vk.png' %}" alt="vk"></a>
+					</li>
+					<li><a href="#"><img src="{% static 'img/header/tiktok.png' %}" alt="tiktok"></a>
+					</li>
+					<li><a href="#">
+							<img src="{% static 'img/header/youtube.png' %}" alt="youtube">
+						</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+
+    {% block content %}
+	<div class="top">
+		<div class="widtch">
+			<div class="top__content">
+				<div>
+					<ul>
+						<li><a href="">HOME</a></li>
+						<li><a href="">МЕРОПРИЯТИЯ</a> </li>
+					</ul>
+				</div>
+				<div class="top__content__border">
+
+				</div>
+				<h1>Хакатон Необходимая
+					часть жизни у каждого программиста</h1>
+			</div>
+		</div>
+	</div>
+	<div class="info">
+		<div class="participation">
+			<div class="participation__img">
+				<img src="{% static 'img/participation/participation.png' %}" alt="">
+			</div>
+			<div class="participation__info">
+				<div class="participation__info__padding">
+					<h2>Прими участие обязательно</h2>
+					<h3>Хакатон</h3>
+					<p>Хакатон нужен нам для того чтобы мы могли помочь развить проекты разных колледжей .</p>
+					<p>Показатели роста IT-продуктов стремительно бьют вверх по всему Казахстану. Нам надо не отставать
+						и идти в верх.</p>
+				</div>
+			</div>
+		</div>
+		<div class="question widtch">
+			<h2>Кому будет полезен хакатон?</h2>
+			<div class="question__item">
+				<div class="question__item-svg">
+					<img src="{% static 'img/participation/magnet.svg' %}" alt="">
+					<p>Учителям и руководителям</p>
+				</div>
+				<div class="question__item-svg">
+					<img src="{% static 'img/participation/univer.svg' %}" alt="">
+					<p>Студентам</p>
+				</div>
+				<div class="question__item-svg">
+					<img src="{% static 'img/participation/suitcase.svg' %}" alt="">
+					<p>Стартаперам и предпринимателям</p>
+				</div>
+			</div>
+		</div>
+		<div class="info__button">
+			<div class="widtch">
+				<div class="info__button__item">
+					<button class="info__button__zapis">ЗАПИСАТЬСЯ</button>
+					<button class="info__button__question">ЗАДАТЬ ВОПРОС</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- форма  -->
+	<div class="widtch" id="regist">
+		<div class="form">
+			<h2>Подать заявку</h2>
+            <form action="" method="post">
+			<div class="form__item">
+				{% csrf_token %}
+                {{form}}
+			</div>
+                <div class="button"><button class="button__form" type="submit">ОТПРАВИТЬ</button>
+				<p>Нажимая на кнопку, вы даете согласие</p>
+				<p>на обработку персональных данных</p>
+			</div>
+            </form>
+
+
+		</div>
+	</div>
+    {% endblock %}
+	<!-- подвал -->
+    {% block footer %}
+	<footer class="footer">
+		<h2>Центр поддержки</h2>
+		<p>Свяжитесь с нами, мы поможем:</p><br>
+		<p>Телефон: +7(747)578-78-28</p>
+		<div class="footer__img">
+			<a href="#"><img src="{% static 'img/footer/telegram.png' %}" alt=""></a>
+			<a href="#"><img src="{% static 'img/footer/whatsapp.png' %}" alt=""></a>
+		</div>
+	</footer>
+    {% endblock footer %}
 </body>
+
 </html>

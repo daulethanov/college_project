@@ -26,6 +26,8 @@ class Users(AbstractUser):
     groups = models.ManyToManyField(Group, verbose_name='Группа')
     USERNAME_FIELD = 'username'
 
+    def get_group(self):
+        return ", ".join([str(p) for p in self.groups.all()])
 
 class CustomGroup(Group):
     users = models.ManyToManyField(Users, null=True, blank=True, verbose_name='Пользователи')
@@ -33,3 +35,6 @@ class CustomGroup(Group):
     class Meta:
         verbose_name = 'Группа'
         verbose_name_plural = 'Группы'
+
+    def users_count(self):
+        return ", ".join([str(p) for p in self.users.all()])
